@@ -1,0 +1,22 @@
+{
+  "name": "loopstudios-landing",
+  "version": "1.0.0",
+  "description": "FrontEnd Mentor challenge",
+  "scripts": {
+    "sass": "npx sass --watch ./stylesheets/main.scss ./stylesheets/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacnovaes/loopstudios-landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isaacnovaes/loopstudios-landing/issues"
+  },
+  "homepage": "https://github.com/isaacnovaes/loopstudios-landing#readme",
+  "dependencies": {
+    "sass": "^1.49.0"
+  }
+}
