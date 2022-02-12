@@ -1,0 +1,53 @@
+@use "../abstracts/mixins";
+
+.mobile-menu {
+	opacity: 0;
+	pointer-events: none; // make it possible to animate the element
+	// kinda fake animation from "display:none" to "display:block"
+	position: absolute;
+	z-index: 2;
+	inset: 0;
+	transition: 1s;
+	background-color: var(--black);
+	color: var(--white);
+
+	.menu-container {
+		@include mixins.center;
+		margin-top: 3rem; // equal to the header content margin top
+		display: flex;
+		flex-direction: column;
+		row-gap: 13rem;
+
+		.first-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.hamburger {
+				width: 25px;
+				height: 25px;
+				background-image: url("../../images/icon-close.svg");
+				background-size: cover;
+			}
+		}
+
+		> .mobile-links {
+			display: flex;
+			flex-direction: column;
+			row-gap: 13px;
+
+			a {
+				display: block;
+				padding: 10px 0;
+				text-transform: uppercase;
+				font: 300 var(--size-700) var(--font-family-josefin-300);
+				color: var(--white);
+			}
+		}
+	}
+}
+
+.mobile-menu-active {
+	pointer-events: auto; // reestablish default property value
+	opacity: 1;
+}   

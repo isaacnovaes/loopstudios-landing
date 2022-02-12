@@ -1,0 +1,67 @@
+@media screen and (min-width: 700px) {
+	.mobile-menu {
+		//make sure that the mobile menu doesn't show up on desktop
+		pointer-events: none;
+		opacity: 0;
+	}
+
+	.website-container > header {
+		min-height: 100vh;
+		background: rgb(0 0 0 / 58%) url("../../images/desktop/image-hero.jpg")
+			center;
+		background-blend-mode: color;
+		background-size: cover;
+
+		.header-container {
+			.first-row {
+				.hamburger {
+					display: none;
+				}
+				.desktop-links {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-end;
+					width: 60%;
+					max-width: 450px;
+
+					a {
+						display: block;
+						padding: 5px 8px;
+						font: 300 var(--size-500) var(--font-family-josefin-300);
+						color: var(--white);
+						transition: 0.5s;
+						position: relative;
+
+						&:last-of-type {
+							padding: 5px 0; // fix vertical alignment
+						}
+
+						&::before {
+							content: " ";
+							display: block;
+							position: absolute;
+							bottom: -5px;
+							width: 0;
+							height: 2px;
+							background-color: var(--white);
+							transition: 1s ease-in-out;
+						}
+
+						&:hover {
+							transform: scale(1.3);
+
+							&::before {
+								width: 90%;
+							}
+						}
+					}
+				}
+			}
+
+			.header-description {
+				width: 70%;
+				max-width: 550px;
+			}
+		}
+	}
+}

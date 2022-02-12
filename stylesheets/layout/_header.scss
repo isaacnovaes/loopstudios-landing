@@ -1,0 +1,44 @@
+@use "../abstracts/mixins";
+
+.website-container > header {
+	min-height: 47rem;
+	background: url("../../images/mobile/image-hero.jpg") center;
+	background-size: cover;
+
+	.header-container {
+		@include mixins.center;
+		padding-top: 3rem;
+		display: flex;
+		flex-direction: column;
+		row-gap: 13rem;
+
+		.first-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			.hamburger {
+				width: 24px;
+				height: calc(16 / 24 * 25px); // keep icon scale
+				background: url("../../images/icon-hamburger.svg") center;
+				background-size: cover;
+			}
+
+			.desktop-links {
+				display: none;
+			}
+		}
+
+		.header-description {
+			border: 2px solid var(--white);
+
+			> h1 {
+				padding: 2rem; // website general inner padding
+				text-transform: uppercase;
+				font: 300 var(--size-900) / 1.1 var(--font-family-josefin-300);
+				color: var(--white);
+				letter-spacing: 2px;
+			}
+		}
+	}
+}
