@@ -1,0 +1,117 @@
+@use "../abstracts/mixins";
+
+main {
+	margin-top: 8rem;
+
+	.first-section {
+		.first-section-container {
+			@include mixins.center;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			row-gap: 40px;
+
+			.interactive-image {
+				width: 100%;
+				max-width: 500px;
+				height: 60vw;
+				max-height: 400px;
+				background: url("../../images/mobile/image-interactive.jpg") center;
+				background-size: cover;
+			}
+
+			.description {
+				padding: 0 2rem;
+
+				> h1 {
+					text-transform: uppercase;
+					font: 600 var(--size-800) / 1.1 var(--font-family-josefin-300);
+					text-align: center;
+					width: 100%;
+					max-width: 500px;
+					margin: 0 auto;
+				}
+
+				> p {
+					color: var(--dark-gray);
+					text-align: center;
+					font-size: var(--size-500);
+					margin: 20px auto 0;
+					max-width: 500px;
+				}
+			}
+		}
+	}
+
+	.second-section {
+		min-height: 100vh;
+		margin-top: 8rem;
+
+		.second-section-container {
+			@include mixins.center;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+
+			.first-row {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+				h1 {
+					text-transform: uppercase;
+					font: 600 var(--size-800) / 1.1 var(--font-family-josefin-300);
+					text-align: center;
+				}
+
+				a {
+					display: none;
+				}
+			}
+
+			.images-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1rem;
+
+				.image {
+					width: 100%;
+					padding: 5rem;
+					// max-width: calc((1000px - 3rem) / 4); // (total mixin center width - 3*colum-gap) / (4*image-container)
+					position: relative;
+					height: 200px;
+					background-position: center;
+					background-size: cover;
+					background-color: rgba(0, 0, 0, 0.39);
+					background-blend-mode: color;
+					
+
+					@for $i from 1 through 8 {
+						&:nth-of-type(#{$i}) {
+							background-image: url("../../images/mobile/#{$i}.jpg");
+						}
+					}
+
+					h2 {
+						width: 80px;
+						position: absolute;
+						bottom: 1rem;
+						left: 2rem;
+						color: var(--white);
+						font: 300 var(--size-400) / 1.1 var(--font-family-josefin-300);
+						text-transform: uppercase;
+						
+					}
+				}
+			}
+
+			> a {
+				@include mixins.second-section-button;
+			}
+		}
+	}
+}
