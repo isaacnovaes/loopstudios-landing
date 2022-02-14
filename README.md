@@ -1,5 +1,7 @@
 # Frontend Mentor - Loopstudios landing page solution
 
+[Project live](https://loopstudioslandingpage-isaac.netlify.app)
+
 ![Project preview](design/desktop-preview.jpg)
 
 ## Table of contents
@@ -26,12 +28,15 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+- [mobile](./design/mobile.png)
+
+- [mobile menu](./design/mobile-menu.png)
+
+- [desktop](./design/desktop.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live site](https://loopstudioslandingpage-isaac.netlify.app)
 
 ## My process
 
@@ -47,26 +52,46 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+In this project I trained using mixins with default parameters
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@mixin link-hover($width: 90%, $bottom: -5px) {
+ & {
+  position: relative;
+ }
+ &::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: $bottom;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--white);
+  transition: 1s ease-in-out;
+ }
+
+ &:hover {
+  transform: scale(1.3);
+
+  &::before {
+   width: $width;
+  }
+ }
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+Besides that, I used SASS @for statements, which come in handy for repetitive actions, such as:
+
+```css
+@for $i from 1 through 8 {
+      &:nth-of-type(#{$i}) {
+       background-image: url("../../images/mobile/#{$i}.jpg");
+      }
+     }
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I have decided to conclude this challenge having the goal of practising simple landing pages with HTML and SASS. Simple I took a brake to study for my university exams, I felt the need to practice the foundations.
