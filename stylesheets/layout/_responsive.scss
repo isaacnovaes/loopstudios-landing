@@ -38,24 +38,7 @@
 							padding: 5px 0; // fix vertical alignment
 						}
 
-						&::before {
-							content: " ";
-							display: block;
-							position: absolute;
-							bottom: -5px;
-							width: 0;
-							height: 2px;
-							background-color: var(--white);
-							transition: 1s ease-in-out;
-						}
-
-						&:hover {
-							transform: scale(1.3);
-
-							&::before {
-								width: 90%;
-							}
-						}
+						@include mixins.link-hover;
 					}
 				}
 			}
@@ -105,8 +88,7 @@
 		}
 
 		.second-section .second-section-container {
-			$gap: 1rem;
-			gap: $gap;
+			row-gap: 4rem;
 			.first-row {
 				justify-content: space-between;
 				> a {
@@ -117,7 +99,7 @@
 			.images-container {
 				.image {
 					// (total mixin center width - 3*colum-gap) / (4*image-container)
-					max-width: calc((1000px - 3 * $gap) / 4);
+					max-width: calc((1000px - 3 * 1rem) / 4);
 					height: 400px;
 					transition: 0.5s;
 
@@ -130,7 +112,7 @@
 					&:hover {
 						cursor: pointer;
 						background-color: rgba(250, 250, 250, 0.5);
-						transform: translateY(-$gap + 0.5rem);
+						transform: translateY(-1rem + 0.5rem);
 
 						h2 {
 							color: var(--black);
@@ -151,6 +133,31 @@
 
 			> a {
 				display: none;
+			}
+		}
+	}
+
+	footer .footer-container {
+		grid-template-columns: auto 20rem;
+		grid-template-rows: auto auto;
+		justify-items: flex-start;
+
+		> img {
+			grid-area: 1/1/2/2;
+		}
+
+		.footer-information {
+			grid-area: 1/2/3/3;
+			.social-media {
+			}
+			.copy-rights {
+			}
+		}
+		.footer-links {
+			flex-direction: row;
+			width: 20rem;
+			> a {
+				margin: 0;
 			}
 		}
 	}
