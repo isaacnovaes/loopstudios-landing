@@ -94,4 +94,4 @@ Besides that, I used SASS @for statements, which come in handy for repetitive ac
 
 ### Continued development
 
-I have decided to conclude this challenge having the goal of practising simple landing pages with HTML and SASS. Simple I took a brake to study for my university exams, I felt the need to practice the foundations.
+I have decided to conclude this challenge having the goal of practising simple landing pages with HTML and SASS. Since I took a brake to study for my university exams, I felt the need to practice the foundations.
